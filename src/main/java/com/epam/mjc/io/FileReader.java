@@ -24,7 +24,9 @@ public class FileReader {
                 }
                 key = builder.toString();
                 builder.delete(0, builder.length());
-                fileStream.skip(1);
+                if (fileStream.skip(1) != 1) {
+                    return null;
+                }
                 while ((ch = fileStream.read()) != -1) {
                     if ((char) ch == '\n') {
                         break;
