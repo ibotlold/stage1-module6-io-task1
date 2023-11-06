@@ -7,12 +7,12 @@ import java.util.HashMap;
 public class FileReader {
 
     public Profile getDataFromFile(File file) {
-        HashMap<String, String> map = new HashMap();
+        HashMap<String, String> map = new HashMap<>();
         try (FileInputStream fileStream = new FileInputStream(file)) {
             int ch;
             StringBuilder builder = new StringBuilder();
-            String key = "";
-            String value = "";
+            String key;
+            String value;
             while ((ch = fileStream.read()) != -1) {
                 builder.delete(0, builder.length());
                 builder.append((char) ch);
